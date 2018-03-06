@@ -110,7 +110,9 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = "Win!";
         computer.score++;
     }
-
+    setGamePoints();
+    wygrana();
+  
 }
 
 
@@ -127,4 +129,20 @@ function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score; 
     
+}
+
+function wygrana() {
+    if (computer.score == 10) {
+        computerResultElem.innerHTML = "Wygrana!";
+        pickElem.style.display = 'none';
+        resultsElem.style.display = 'block';
+       
+    } 
+    else if (player.score == 10) {
+        playerResultElem.innerHTML = "Wygrana!";
+        pickElem.style.display = 'none';
+        resultsElem.style.display = 'block';
+        
+    }
+   
 }
