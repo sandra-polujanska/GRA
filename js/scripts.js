@@ -111,7 +111,7 @@ function checkRoundWinner(playerPick, computerPick) {
         computer.score++;
     }
     setGamePoints();
-    wygrana();
+    endGame();
   
 }
 
@@ -131,18 +131,16 @@ function setGamePoints() {
     
 }
 
-function wygrana() {
+function endGame() {
     if (computer.score == 10) {
-        computerResultElem.innerHTML = "Wygrana!";
-        pickElem.style.display = 'none';
-        resultsElem.style.display = 'block';
-       
+        gameState = 'ended';
+        setGameElements();
+        alert('You lost! :(')
     } 
-    else if (player.score == 10) {
-        playerResultElem.innerHTML = "Wygrana!";
-        pickElem.style.display = 'none';
-        resultsElem.style.display = 'block';
-        
+   else if (player.score == 10) {
+       gameState = 'ended';
+        setGameElements();
+        alert('You win! :)')
     }
    
 }
