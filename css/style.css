@@ -1,4 +1,13 @@
 
+body {
+    background-color: #dcdee2;
+}
 .container {
     padding: 10px;
 }
+
+#js-winnerElem {
+    font-size: 30px;
+    font-weight: bold;
+}
+

@@ -29,7 +29,8 @@ var gameState = 'notStarted',  //started // ended
 
 var newGameElem = document.getElementById('js-newGameElement'),
     pickElem = document.getElementById('js-playerPickElement'),
-    resultsElem = document.getElementById('js-resultsTableElement');
+    resultsElem = document.getElementById('js-resultsTableElement'),
+    winnerElem = document.getElementById('js-winnerElem');
 
 function setGameElements() {
   switch(gameState) {
@@ -37,6 +38,7 @@ function setGameElements() {
         newGameElem.style.display = 'none';
         pickElem.style.display = 'block';
         resultsElem.style.display = 'block';
+        winnerElem.style.display = 'none';
       break;
     case 'ended':
         newGameBtn.innerText = 'Jeszcze raz';
@@ -45,6 +47,7 @@ function setGameElements() {
         newGameElem.style.display = 'block';
         pickElem.style.display = 'none';
         resultsElem.style.display = 'none';
+        winnerElem.style.display = 'block';
   }
 }
 
@@ -132,15 +135,16 @@ function setGamePoints() {
 }
 
 function endGame() {
+    
     if (computer.score == 10) {
         gameState = 'ended';
         setGameElements();
-        alert('You lost! :(')
+        winnerElem.innerHTML = "You lost! :(";
     } 
    else if (player.score == 10) {
        gameState = 'ended';
         setGameElements();
-        alert('You win! :)')
+        winnerElem.innerHTML = "You win! :)";
     }
    
 }
