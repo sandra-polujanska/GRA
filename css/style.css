@@ -1,13 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: #dcdee2;
-}
-.container {
-    padding: 10px;
+    background-color: #a5b4cc;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 32px;
 }
 
-#js-winnerElem {
-    font-size: 30px;
+.container {
+    padding: 15px;
+}
+
+.start {
+    margin-top: 30px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 50px;
     font-weight: bold;
 }
 
+h3 {
+    font-size: 34px;
+    padding: 0;
+    margin: 0;
+}
+
+#js-newGameButton {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #828fa3;
+    border: 0;
+    border-radius: 50%;
+}
+
+#js-newGameButton:hover {
+    opacity: 0.8;
+}
+
+.badge, .btn {
+   font-size: 32px; 
+}
+
+.btn {
+    background-color: #a5b4cc;
+}
+
+.btn i:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 400px) {
+    img {
+        width: 50%;
+    }
+}

@@ -1,30 +1,43 @@
 <!doctype html>
-<html lang="pl">
-  <head>
+<html lang="en">
+    
+
+<head>
     <meta charset="utf-8">
-    <title>Game</title>
-     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="author" content="Sandra Polujanska">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="rock, paper, scissors, game, HTML, CSS, RWD, JS">
+    <title>Rock-paper-scissors game</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" /> 
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-     
-      <div class="container">
-          <h3 class="text-center">
-            Welcome to the game
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+</head>
+<body>
+    
+    <!-- title with labels -->
+    <div class="container start">
+          <h1 class="text-center">Welcome to the game</h1>
+    </div>
+    <div class="container">
+            <h3 class="text-center">
             <span class="label label-default">Rock</span>
             <span class="label label-info">Paper</span>
             <span class="label label-danger">Scissors</span>
           </h3>
-      </div>
+    </div>
+
+    
+    <!-- new game button -->
      <div id="js-newGameElement" class="container">
           <div class="row text-center">
             <button  id="js-newGameButton" class="btn btn-default">
-              New game
+              Play!
             </button>
           </div>
       </div>
       
+    <!-- player picks one of three buttons -->
       <div id="js-playerPickElement" class="container">
           <div class="row text-center">
             <button id="js-playerPick_rock" class="btn">
@@ -48,6 +61,7 @@
           </div>
       </div>
       
+    <!-- results/actual game state -->
       <div id="js-resultsTableElement" class="container">
           <div class="row">
             <div class="col-xs-5 text-center">
@@ -67,8 +81,10 @@
               </span>
               Computer
             </div>
-          </div>
-          <div class="row">
+        </div>
+          
+        <!-- second row (player choices) -->
+        <div class="row">
             <div class="col-xs-5 text-center">
               <span id="js-playerPick">
                 Player selection
@@ -80,8 +96,10 @@
                 Computer selection
               </span>
             </div>
-          </div>
-          <div class="row">
+        </div>
+          
+        <!-- third row (round results) -->
+        <div class="row">
             <div class="col-xs-5 text-center">
               <span id="js-playerResult">
                 Player Score
@@ -93,11 +111,15 @@
                 Computer Score
               </span>
             </div>
-          </div>
-      </div>
+        </div>
+    </div>
       
-      <div id="js-winnerElem" class="container text-center"></div> 
-      
-   <script type="text/javascript" src="js/scripts.js"></script>   
-  </body>
+    <div id="js-winnerElem" class="container text-center"></div>
+    <div class="container text-center"><img src="images/Rock-paper-scissors.png"</div>
+    
+    <!-- scripts -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>   
+</body>
+    
 </html>

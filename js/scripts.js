@@ -1,5 +1,6 @@
 // scripts.js
 
+
 // PRZYCISK
 var newGameBtn = document.getElementById('js-newGameButton');
 
@@ -41,7 +42,7 @@ function setGameElements() {
         winnerElem.style.display = 'none';
       break;
     case 'ended':
-        newGameBtn.innerText = 'Jeszcze raz';
+        newGameBtn.innerText = 'Play again!';
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
@@ -61,17 +62,39 @@ var playerPointsElem = document.getElementById('js-playerPoints'),
 
 
 function newGame() {
-  player.name = prompt('Please enter your name', 'imię gracza');
-  if (player.name) {
-    player.score = computer.score = 0;
-    gameState = 'started';
-    setGameElements();
+    
+    swal({
+            title: "Hello!",
+            text: "Please, enter your name:",
+            type: "input",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "player's name",
+        },
+        function (inputValue) {
+            if (inputValue === false) return false;
 
-    playerNameElem.innerHTML = player.name;
-        setGamePoints(); 
-  }
+            if (inputValue === "") {
+                swal.showInputError("You must type your name!");
+                return false;
+            }
+            swal("Let's play!", "Good luck, " + inputValue, "success");
+            player.name = inputValue;
 
+
+            if (player.name) {
+                player.score = computer.score = 0;
+                gameState = 'started';
+                setGameElements();
+
+                playerNameElem.innerHTML = player.name;
+                setGamePoints();
+            }
+        });
 }
+    
+
 
 
 
