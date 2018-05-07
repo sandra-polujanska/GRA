@@ -42,7 +42,7 @@ h3 {
     opacity: 0.8;
 }
 
-.btn {
+.btn, .badge {
    font-size: 32px; 
 }
 
